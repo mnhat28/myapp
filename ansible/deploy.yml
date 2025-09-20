@@ -1,0 +1,30 @@
+- name: Deploy myapp using Docker
+  hosts: target_nodes
+  become: yes
+  tasks:
+    - name: Ensure Docker is installed
+      apt:
+        name: docker.io
+        state: present
+        update_cache: yes
+
+    - name: Pull latest Docker image
+      docker_image:
+        name: "{{ docker_user }}/myapp"
+        tag: latest
+        source: pull
+
+    - name: Stop old container (if exists)
+      docker_container:
+        name: myapp
+        state: absent
+
+    - name: Start new container
+      docker_container:
+        name: myapp
+        image: "{{ docker_user }}/myapp:latest"
+        state: started
+        restart_policy: always
+        published_ports:
+          - "80:80"
+
