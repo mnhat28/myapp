@@ -1,0 +1,8 @@
+- name: Stop myapp container
+  hosts: target_nodes
+  become: yes
+  tasks:
+    - name: Stop and remove container
+      docker_container:
+        name: myapp
+        state: absent
