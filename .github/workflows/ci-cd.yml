@@ -31,12 +31,7 @@ jobs:
 
       # 5. Deploy bằng Ansible (chạy trên control node qua SSH)
       - name: Run Ansible Playbook
-        uses: appleboy/ssh-action@v0.1.10
-        with:
-          host: ${{ secrets.CONTROL_NODE_IP }}
-          username: ${{ secrets.CONTROL_NODE_USER }}
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
-          script: |
+          run: |
             cd ~/myapp/ansible
             ansible-playbook -i inventory.ini deploy.yml
 
