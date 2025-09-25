@@ -31,7 +31,7 @@ jobs:
 
       # 5. Deploy bằng Ansible (chạy trên control node qua SSH)
       - name: Run Ansible Playbook
-          run: |
-            cd ~/myapp/ansible
-            ansible-playbook -i inventory.ini deploy.yml
+        run: |
+          cd ~/myapp/ansible
+          ansible-playbook -i inventory.ini deploy.yml
 
