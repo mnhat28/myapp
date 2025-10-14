@@ -3,7 +3,7 @@ const app = express();
 const PORT = 80;
 
 app.get('/', (req, res) => {
-  res.send("Hello from my distributed system!");
+  res.send("Hello from my distributed system, my name is Tran Minh Nhat!");
 });
 
 app.listen(PORT, () => {
