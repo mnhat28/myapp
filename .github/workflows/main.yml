@@ -26,7 +26,8 @@ jobs:
           key: ${{ secrets.MASTER_SSH_KEY }}
           script: |
             cd ~/k8s
-            sed -i "s|<DOCKERHUB_USERNAME>/myapp:latest|${{ secrets.DOCKERHUB_USERNAME }}/myapp:${{ github.sha }}|" deployment.yaml
+            #sed -i "s|<DOCKERHUB_USERNAME>/myapp:latest|${{ secrets.DOCKERHUB_USERNAME }}/myapp:${{ github.sha }}|" deployment.yaml
+            sed -i "s|image:.*myapp:.*|image: ${{ secrets.DOCKERHUB_USERNAME }}/myapp:${{ github.sha }}|g" deployment.yaml
             sudo kubectl apply -f deployment.yaml
             sudo kubectl apply -f service.yaml
             sudo kubectl rollout status deployment/myapp -n default
