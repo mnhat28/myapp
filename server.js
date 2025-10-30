@@ -206,10 +206,10 @@ app.get('/', (req, res) => {
     <body>
       <div class="card" role="article" aria-label="MyApp welcome card">
         <div class="left">
-          <h1>🚀 My Distributed System, Giảng viên của tôi là Huỳnh Văn Đặng</h1>
-          <div class="subtitle">Lightweight demo — single-file app, production-ready feel</div>
-          <p class="desc">Hello from my distributed system, love you ❤️
-          <br/>This demo includes a modern UI shell, subtle animations and responsive layout — but still runs from a tiny Express server.</p>
+          <h1>Hệ tính toán phân bố - NT533.Q13</h1>
+          <div class="subtitle">Nhóm 5 - Trần Minh Nhật - Huỳnh Lâm Tuấn Phong</div>
+          <p class="desc">Đây là đồ án môn học của nhóm 5 - IaC & CI/CD
+          <br/>Chúng em thực hiện quá trình tự động BUILD, DEPLOY hoàn toàn tự động lên K3s Cluster được dựng bởi Terraform.</p>
 
           <div class="actions" aria-hidden="false">
             <button class="btn" id="sayHi">Say Hi 👋</button>
