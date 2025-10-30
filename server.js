@@ -206,7 +206,7 @@ app.get('/', (req, res) => {
     <body>
       <div class="card" role="article" aria-label="MyApp welcome card">
         <div class="left">
-          <h1>🚀 My Distributed System, My name is Tran Minh Nhat 2805</h1>
+          <h1>🚀 My Distributed System, Nguyen Hoang Mai Tram</h1>
           <div class="subtitle">Lightweight demo — single-file app, production-ready feel</div>
           <p class="desc">Hello from my distributed system, love you ❤️
           <br/>This demo includes a modern UI shell, subtle animations and responsive layout — but still runs from a tiny Express server.</p>
