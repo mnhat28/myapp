@@ -206,7 +206,7 @@ app.get('/', (req, res) => {
     <body>
       <div class="card" role="article" aria-label="MyApp welcome card">
         <div class="left">
-          <h1>Hệ tính toán phân bố - NT533.Q13 - Huỳnh Văn Đặng</h1>
+          <h1>Hệ tính toán phân bố - NT533.Q13</h1>
           <div class="subtitle">Nhóm 5 - Trần Minh Nhật - Huỳnh Lâm Tuấn Phong</div>
           <p class="desc">Đây là đồ án môn học của nhóm 5 - IaC & CI/CD
           <br/>Chúng em thực hiện quá trình tự động BUILD, DEPLOY hoàn toàn tự động lên K3s Cluster được dựng bởi Terraform.</p>
