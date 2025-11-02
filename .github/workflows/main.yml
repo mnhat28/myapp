@@ -38,6 +38,11 @@ jobs:
             echo "⌛ Waiting for rollout to complete..."
             if ! sudo kubectl rollout status deployment/myapp -n default --timeout=180s; then
               echo "❌ Rollout failed! Performing rollback..."
+
+              # Ghi chú lý do rollback vào annotation
+              TIMESTAMP=$(date '+%Y-%m-%d %H:%M:%S')
+              sudo kubectl annotate deployment myapp kubernetes.io/change-cause="Rollback on $TIMESTAMP due to failed rollout of image: ${{ secrets.DOCKERHUB_USERNAME }}/myapp:${{ github.sha }}" --overwrite
+              
               sudo kubectl rollout undo deployment/myapp -n default
               sudo kubectl rollout status deployment/myapp -n default --timeout=120s
               echo "✅ Rollback completed."
