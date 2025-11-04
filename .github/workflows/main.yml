@@ -30,6 +30,7 @@ jobs:
             sed -i "s|image:.*myapp:.*|image: ${{ secrets.DOCKERHUB_USERNAME }}/myapp:${{ github.sha }}|g" deployment.yaml
             sudo kubectl apply -f deployment.yaml
             sudo kubectl apply -f service.yaml
+            sudo kubectl apply -f ingress.yaml
             #sudo kubectl rollout status deployment/myapp -n default
             # 🧩 Ghi chú cho rollback history
             sudo kubectl annotate deployment myapp kubernetes.io/change-cause="Deploy image: ${{ secrets.DOCKERHUB_USERNAME }}/myapp:${{ github.sha }}" --overwrite
