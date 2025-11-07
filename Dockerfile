@@ -17,5 +17,5 @@ COPY . .
 EXPOSE 80
 
 # Lệnh chạy ứng dụng
-CMD ["node", "server.js"]
+CMD ["node", "server1.js"]
 
